@@ -1,4 +1,6 @@
 def potega(podstawa, do_potegi):
+    if do_potegi == 0:
+        return 1
     if do_potegi == 1:
         return podstawa
     if do_potegi%2 == 0:
@@ -20,6 +22,11 @@ def potega3(podstawa, do_potegi):
             return wynik
         return _potega3(podstawa*wynik, do_potegi-1)
     return _potega3(podstawa, do_potegi-1)
+
+def potega4(podstawa, do_potegi):
+    if do_potegi == 0:
+        return 1
+    return podstawa * potega4(podstawa, do_potegi-1)
 
 def czyPalindrom(word):
     if len(word) < 2:
@@ -51,9 +58,10 @@ def moda(lst):
            return k
 
 def main():
-   print(potega(2134, 45))
+   print(potega(2, 450000))
    print(potega2(2, 996))
-   print(potega3(2, 500))
+   print(potega3(2, 996))
+   print(potega4(2, 996))
    print(czyPalindrom("kajak"))
    print(czyAnagram("epies", "sieeep"))
    print(moda([78, 5, 4, 78, 34, 5, 65, 34, 78, 4, 5, 5]))
